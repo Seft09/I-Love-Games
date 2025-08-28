@@ -1,0 +1,108 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+@font-face {
+    font-family: 'Mozilla';
+    src: url(../I_love_games/Font/MozillaHeadline-VariableFont_wdth\,wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Mono';
+    src: url(../I_love_games/Font/NovaMono-Regular.ttf) format('truetype');
+}
+body {
+    background-color: #dcdcf3;
+}
+#nosotros, #juegos, #contacto {
+    scroll-margin-top: 160px;
+}
+#cabeza {
+    position:sticky;
+    top: 0;
+    background-color:#B3E5FC;
+    border-bottom: 5px solid #FFE5B4; 
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 8px #333;
+}
+#cabeza h1 {
+    font:  bold 70px 'Mozilla', sans-serif ;
+    color: #333;
+    margin-bottom: 10px;
+}
+#cabeza a {
+    text-decoration: none;
+    color: #444;
+    font:lighter 30px 'Mono', sans-serif;
+    margin: 0 15px;
+}
+#cabeza a:hover {
+    font-size: 33px;
+    color:#e7ce9e;
+    transition: font-size 0.3s, color 0.3s;
+}
+main{
+    padding: 30px;
+}
+#nosotros {
+    background-color: #D5F5E3;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px #333;
+    margin-bottom: 20px;
+}
+#nosotros h2 {
+    font: bold 35px 'Mozilla', sans-serif;
+    color: #333;
+    margin: 10px;
+}
+#nosotros p {
+    font: 25px 'Mono', sans-serif;
+    color: #444;
+}
+#nosotros img {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px #666;
+}
+#juegos {
+    background-color: #D5F5E3;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px #333;
+    margin-bottom: 20px;
+}
+#juegos h2 {
+    font: bold 35px 'Mozilla', sans-serif;
+    color: #333;
+    margin: 10px;
+}
+#juegos h3 {
+    font: bold 35px 'Mono', sans-serif;
+    color: #444;
+    margin: 10px;
+}
+#juegos div {
+    text-align: center;
+    display: inline-block;
+    margin: 30px;
+    padding: 10px;
+    background-color: #FFE5B4;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+    width: calc(30.49% - 40px);
+    height: 300px;
+}
+#contacto {
+    background-color: #D5F5E3;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px #333;
+}
+#contacto p {
+    font: bold 25px 'Mozilla', sans-serif;
+    color: #333;
+    margin: 10px;
+}
