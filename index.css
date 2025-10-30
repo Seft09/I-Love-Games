@@ -110,7 +110,7 @@ main {
     background-color: #FFE5B4;
     border-radius: 0.9375rem;
     box-shadow: 0 0.3125rem 0.625rem #666;
-    width: 27.8%;
+    width: 29%;
     min-width: 17.5rem;
     height: 13.75rem;
     vertical-align: top;
@@ -240,3 +240,4 @@ main {
         margin: 1rem;
     }
 }
+
