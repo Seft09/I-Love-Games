@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❌⭕ Tres en Raya</title>
+  <link rel="stylesheet" href="tresenraya.css">
+</head>
+<body>
+  <header>
+    <h1>❌⭕ Tres en Raya</h1>
+    <a href="../Index.html">⬅ Volver al inicio</a>
+  </header>
+
+  <main>
+    <div id="game">
+      <div id="board"></div>
+      <p id="status">Turno de: ❌</p>
+      <button id="reset">Reiniciar</button>
+    </div>
+
+    <div id="mensaje-final" class="oculto" style="display: none;">
+      <div class="contenido">
+        <h2 id="texto-final"></h2>
+        <div class="botones-final">
+          <button id="btn-reiniciar">Reiniciar</button>
+          <button id="btn-inicio" onclick="window.location.href='../Index.html'">Volver al inicio</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const board = document.getElementById('board');
+    const statusText = document.getElementById('status');
+    const resetBtn = document.getElementById('reset');
+    const mensajeFinal = document.getElementById('mensaje-final');
+    const textoFinal = document.getElementById('texto-final');
+    const btnReiniciar = document.getElementById('btn-reiniciar');
+
+    let currentPlayer = '❌';
+    let gameActive = true;
+    let gameState = ["", "", "", "", "", "", "", "", ""];
+
+    const winningConditions = [
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
+    ];
+
+    function createBoard() {
+      board.innerHTML = '';
+      gameState = ["", "", "", "", "", "", "", "", ""];
+      currentPlayer = '❌';
+      gameActive = true;
+      mensajeFinal.classList.add("oculto");
+      statusText.innerText = "Turno de: ❌";
+
+      mensajeFinal.classList.add("oculto");
+      mensajeFinal.style.display = "none";
+
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', () => cellClick(i));
+        board.appendChild(cell);
+      }
+    }
+
+    function cellClick(i) {
+      if (!gameActive || gameState[i] !== "") return;
+
+      gameState[i] = currentPlayer;
+      board.children[i].innerText = currentPlayer;
+
+      if (checkWinner()) {
+        endGame(`🎉 ¡${currentPlayer} gana!`);
+      } else if (!gameState.includes("")) {
+        endGame("😐 ¡Empate!");
+      } else {
+        currentPlayer = currentPlayer === '❌' ? '⭕' : '❌';
+        statusText.innerText = `Turno de: ${currentPlayer}`;
+      }
+    }
+
+    function checkWinner() {
+      return winningConditions.some(condition => {
+        const [a, b, c] = condition;
+        return (
+          gameState[a] &&
+          gameState[a] === gameState[b] &&
+          gameState[a] === gameState[c]
+        );
+      });
+    }
+
+    function endGame(mensaje) {
+      gameActive = false;
+      textoFinal.innerText = mensaje;
+      mensajeFinal.style.display = "flex";
+      mensajeFinal.classList.remove("oculto");
+    }
+
+    resetBtn.addEventListener('click', createBoard);
+    btnReiniciar.addEventListener('click', createBoard);
+    createBoard();
+  </script>
+</body>
+</html>

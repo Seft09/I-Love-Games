@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Mozilla';
+    src: url('../I_love_games/Font/MozillaHeadline-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mono';
+    src: url('../I_love_games/Font/NovaMono-Regular.ttf') format('truetype');
+}
+
+body {
+    background-color: #dcdcf3;
+    font-family: 'Mono', sans-serif;
+    line-height: 1.6;
+}
+
+#nosotros, #juegos, #contacto {
+    scroll-margin-top: 10rem;
+}
+
+#cabeza {
+    position: sticky;
+    top: 0;
+    background-color: #B3E5FC;
+    border-bottom: 0.3125rem solid #FFE5B4;
+    padding: 0.625rem;
+    text-align: center;
+    box-shadow: 0 0.3125rem 0.5rem #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cabeza h1 {
+    font: bold clamp(2rem, 5vw, 4.375rem) 'Mozilla', sans-serif;
+    color: #333;
+    margin-bottom: 0.625rem;
+}
+
+#cabeza a {
+    text-decoration: none;
+    color: #444;
+    font: lighter clamp(1rem, 2vw, 1.875rem) 'Mono', sans-serif;
+    margin: 0 0.9375rem;
+    transition: font-size 0.3s, color 0.3s;
+}
+
+#cabeza a:hover {
+    font-size: clamp(1.0625rem, 2.1vw, 2.0625rem);
+    color: #e7ce9e;
+}
+
+main {
+    padding: 1.875rem;
+}
+
+#nosotros {
+    background-color: #D5F5E3;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.3125rem 0.5rem #333;
+    margin-bottom: 1.25rem;
+}
+
+#nosotros h2 {
+    font: bold clamp(1.5rem, 3vw, 2.1875rem) 'Mozilla', sans-serif;
+    color: #333;
+    margin: 0.625rem;
+}
+
+#nosotros p {
+    font: clamp(1rem, 2vw, 1.5625rem) 'Mono', sans-serif;
+    color: #444;
+}
+
+#nosotros img {
+    display: block;
+    margin: 1.25rem auto;
+    max-width: 12.5rem;
+    height: auto;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.1875rem 0.3125rem #666;
+}
+
+#juegos {
+    background-color: #D5F5E3;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.3125rem 0.5rem #333;
+    margin-bottom: 1.25rem;
+}
+
+#juegos h2 {
+    font: bold clamp(1.5rem, 3vw, 2.1875rem) 'Mozilla', sans-serif;
+    color: #333;
+    margin: 0.625rem;
+}
+
+#juegos div {
+    text-align: center;
+    display: inline-block;
+    margin: 1.25rem;
+    padding: 1.25rem;
+    background-color: #FFE5B4;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.3125rem 0.625rem #666;
+    width: 27.8%;
+    min-width: 17.5rem;
+    height: 13.75rem;
+    vertical-align: top;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#juegos div:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.625rem 1.25rem #444;
+}
+
+#juegos h3 {
+    font: bold clamp(1.25rem, 2.5vw, 2rem) 'Mono', sans-serif;
+    color: #333;
+    margin-top: 2.5rem;
+    line-height: 1.3;
+    word-spacing: 0.1875rem;
+}
+
+#contacto {
+    background-color: #D5F5E3;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.3125rem 0.5rem #333;
+}
+
+#contacto p {
+    font: bold clamp(1rem, 2vw, 1.5625rem) 'Mozilla', sans-serif;
+    color: #333;
+    margin: 0.625rem;
+}
+
+#contacto h2 {
+    font: bold clamp(1.25rem, 2.5vw, 1.875rem) 'Mozilla', sans-serif;
+    color: #333;
+    margin: 0.625rem 0 1.25rem 0;
+}
+
+#comentarios {
+    background-color: #FFE5B4;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.1875rem 0.3125rem #666;
+    max-width: 60%;
+    margin: 0 auto 1.25rem auto;
+    text-align: left;
+}
+
+#comentarios label {
+    font-family: 'Mono', sans-serif;
+    color: #333;
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
+#comentarios input,
+#comentarios textarea {
+    width: 100%;
+    border: 0.125rem solid #ccc;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+    font-family: 'Mono', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.3125rem;
+}
+
+#comentarios button {
+    font-family: 'Mono', sans-serif;
+    background-color: #B3E5FC;
+    border: none;
+    border-radius: 0.625rem;
+    padding: 0.625rem 1.5625rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0.625rem;
+}
+
+#comentarios button:hover {
+    background-color: #81D4FA;
+}
+
+#respuesta {
+    text-align: center;
+    font-family: 'Mono', monospace;
+    color: #333;
+    margin-top: 0.9375rem;
+    font-size: 1.125rem;
+}
+
+#comentarios input:focus,
+#comentarios textarea:focus {
+    border-color: #81D4FA;
+    box-shadow: 0 0 0.3125rem #81D4FA;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    #cabeza h1 {
+        font-size: 3rem;
+    }
+    #cabeza a {
+        font-size: 1.25rem;
+        margin: 0 0.5rem;
+    }
+    #juegos div {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+        height: auto;
+    }
+    #nosotros img {
+        max-width: 80%;
+    }
+    #comentarios {
+        max-width: 90%;
+        padding: 1rem;
+    }
+    main {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #juegos div {
+        width: 40%;
+        margin: 1rem;
+    }
+}

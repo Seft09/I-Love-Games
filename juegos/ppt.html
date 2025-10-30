@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✊🖐✌️ Piedra, Papel o Tijera</title>
+  <link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+  <header>
+    <h1>✊🖐✌️ Piedra, Papel o Tijera</h1>
+    <a href="../Index.html">⬅ Volver al inicio</a>
+  </header>
+
+  <main>
+    <div id="game">
+      <div id="tablero">
+        <div class="jugador">
+          <h3>Tú</h3>
+          <div id="eleccionJugador" class="eleccion">❔</div>
+        </div>
+
+        <div class="vs">
+          <h2>VS</h2>
+        </div>
+
+        <div class="cpu">
+          <h3>CPU</h3>
+          <div id="eleccionCPU" class="eleccion">❔</div>
+        </div>
+      </div>
+
+      <h2>Elige tu jugada:</h2>
+      <div class="choices">
+        <button onclick="play('piedra')">✊</button>
+        <button onclick="play('papel')">🖐</button>
+        <button onclick="play('tijera')">✌️</button>
+      </div>
+
+      <p id="resultado"></p>
+      <p id="puntaje">Marcador: Tú 0 - 0 CPU</p>
+    </div>
+  </main>
+
+  <script>
+    let userScore = 0;
+    let cpuScore = 0;
+
+    function play(userChoice) {
+      const opciones = ['piedra', 'papel', 'tijera'];
+      const cpuChoice = opciones[Math.floor(Math.random() * 3)];
+      let resultado = '';
+
+      // Mostrar elecciones en el tablero
+      document.getElementById('eleccionJugador').textContent = emoji(userChoice);
+      document.getElementById('eleccionCPU').textContent = emoji(cpuChoice);
+
+      // Lógica de resultado
+      if (userChoice === cpuChoice) {
+        resultado = `😐 Empate. Ambos eligieron ${userChoice}`;
+      } else if (
+        (userChoice === 'piedra' && cpuChoice === 'tijera') ||
+        (userChoice === 'papel' && cpuChoice === 'piedra') ||
+        (userChoice === 'tijera' && cpuChoice === 'papel')
+      ) {
+        userScore++;
+        resultado = `😎 ¡Ganaste! ${userChoice} vence a ${cpuChoice}`;
+      } else {
+        cpuScore++;
+        resultado = `😢 Perdiste. ${cpuChoice} vence a ${userChoice}`;
+      }
+
+      document.getElementById('resultado').innerText = resultado;
+      document.getElementById('puntaje').innerText = `Marcador: Tú ${userScore} - ${cpuScore} CPU`;
+    }
+
+    function emoji(eleccion) {
+      switch(eleccion) {
+        case 'piedra': return '✊';
+        case 'papel': return '🖐';
+        case 'tijera': return '✌️';
+        default: return '❔';
+      }
+    }
+  </script>
+</body>
+</html>

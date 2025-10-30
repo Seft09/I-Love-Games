@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I love Games</title>
+    <link rel="stylesheet" href="Index.css">
+    <link rel="icon" href="Imagenes/logo2.png" type="image/png">
+</head>
+<body>
+    <header id="cabeza">
+        <div>
+            <h1>I love Games</h1>
+        </div>
+        <div>
+            <nav>
+                <a href="#nosotros">Acerca de nosotros</a>
+                <a href="#juegos">Juegos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="nosotros">
+            <h2>Bienvenido a </h2>
+            <img src="Imagenes/logo.png" alt="logo">
+            <p>Esta página web está elaborada pensando en el entretenimiento de las demás personas. Queremos que cualquier persona entre y pueda divertirse aunque sea un poco. Elaborada por el estudiante de Juan Del Corral, Jhoan Ordoñez, del curso 1003. Brinda una cantidad de tres juegos sencillos desarrollados en JavaScript. ¡Espero se diviertan y la pasen genial! :)</p>
+        </section>
+
+        <section id="juegos">
+            <h2>Conoce nuestros juegos</h2>
+            
+            <div onclick="location.href='juegos/snake.html'" style="cursor:pointer;">
+                <h3>🐍 Juego de la serpiente</h3>
+            </div>
+            <div onclick="location.href='juegos/ppt.html'" style="cursor:pointer;">
+                <h3>✊🖐✌️ Piedra, papel o tijera</h3> 
+            </div>
+            <div onclick="location.href='juegos/tresenraya.html'" style="cursor:pointer;">
+                <h3>❌⭕ Tres en raya</h3>
+            </div>
+        </section>
+
+        <section id="contacto">
+    <h2>📩 Déjanos tu comentario</h2>
+    <form id="comentarios" onsubmit="return enviarComentario()">
+        <label for="nombre">Tu nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="mensaje">Comentario:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="respuesta"></div>
+
+    <footer>
+        <p>&copy; 2025 I love Games. Todos los derechos reservados. Creador: Jhoan Ordoñez G.</p>
+    </footer>
+
+    <script>
+        function enviarComentario() {
+            const nombre = document.getElementById('nombre').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const respuesta = document.getElementById('respuesta');
+            respuesta.innerHTML = `<p>¡Gracias por tu comentario, <b>${nombre}</b>! 💬</p><p>Tu mensaje: "${mensaje}" ha sido enviado correctamente.</p>`;
+            
+            document.getElementById('comentarios').reset();
+            return false;
+        }
+    </script>
+</section>
+    </main>
+</body>
+</html>

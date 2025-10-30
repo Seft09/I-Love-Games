@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'Mozilla';
+  src: url(../Font/MozillaHeadline-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+  font-family: 'Mono';
+  src: url(../Font/NovaMono-Regular.ttf);
+}
+
+body {
+  background-color: #ffe4ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Mono', monospace;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: 'Mozilla', sans-serif;
+  font-size: 40px;
+  color: #c2185b;
+  margin-bottom: 5px;
+}
+
+a {
+  font-family: 'Mono', sans-serif;
+  color: #ad1457;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ec407a;
+}
+
+#game {
+  background-color: #f8bbd0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  background-color: #fce4ec;
+  border-radius: 10px;
+  font-size: 50px;
+  color: #880e4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cell:hover {
+  background-color: #f48fb1;
+}
+
+#status {
+  font-size: 20px;
+  color: #6a1b9a;
+  margin-bottom: 15px;
+}
+
+#reset {
+  font-family: 'Mono', monospace;
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#reset:hover {
+  background-color: #d81b60;
+}
+
+#mensaje-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.oculto {
+  display: none;
+}
+
+.contenido {
+  background-color: #f8bbd0;
+  color: #4a148c;
+  text-align: center;
+  border-radius: 15px;
+  padding: 30px 50px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: aparecer 0.5s ease;
+}
+
+.contenido h2 {
+  font-family: 'Mozilla', sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.botones-final {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botones-final button {
+  font-family: 'Mono', monospace;
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botones-final button:hover {
+  background-color: #d81b60;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
